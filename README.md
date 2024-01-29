@@ -7,5 +7,6 @@ This is an ( E commerce ) application built with Kotlin and Android Studio.
 
 
 ## Images of Application
-<img src="https://mega.nz/file/4yVmCYxA#lwBgLzFQCL1cg2wgWxnSIyvJSWj3GShFWpAQRNeA8Tk" alt="A beautiful sunset">
+![WhatsApp Image 2024-01-29 at 21 51 01](https://github.com/rahulverma41328/E-Commerce-App/assets/124447091/f725b7d7-7286-46f7-8171-36790024416f)
+
 
