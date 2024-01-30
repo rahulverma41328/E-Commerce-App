@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/login_register_graph"
-    app:startDestination="@id/registerFragment">
+    app:startDestination="@id/introductionFragment">
 
     <fragment
         android:id="@+id/registerFragment"
@@ -10,7 +10,8 @@
         android:label="RegisterFragment" >
         <action
             android:id="@+id/action_registerFragment_to_loginFragment2"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/accountOptionsFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -18,7 +19,8 @@
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_registerFragment2"
-            app:destination="@id/registerFragment" />
+            app:destination="@id/registerFragment"
+            app:popUpTo="@id/accountOptionsFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountOptionsFragment"

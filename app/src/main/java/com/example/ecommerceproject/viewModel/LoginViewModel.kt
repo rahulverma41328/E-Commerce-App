@@ -2,6 +2,7 @@ package com.example.ecommerceproject.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.ecommerceproject.data.User
 import com.example.ecommerceproject.util.Resource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -20,14 +21,19 @@ class LoginViewModel @Inject constructor(
     val login = _login.asSharedFlow()
 
     fun login(email:String,password:String){
+        viewModelScope.launch { _login.emit(Resource.Loading()) }
         firebaseAuth.signInWithEmailAndPassword(
             email,password
         ).addOnSuccessListener {
             viewModelScope.launch {
-                _login.emit(Resource.Success(it))
+                it.user?.let {
+                    _login.emit(Resource.Success(it))
+                }
             }
         }.addOnFailureListener {
-
+            viewModelScope.launch {
+                _login.emit(Resource.Error(it.message.toString()))
+            }
         }
     }
 }
