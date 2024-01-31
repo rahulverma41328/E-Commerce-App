@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.ecommerceproject.R
 import com.example.ecommerceproject.activities.ShoppingActivity
 import com.example.ecommerceproject.databinding.FragmentLoginBinding
+import com.example.ecommerceproject.dialog.setupBottomSheetDialog
 import com.example.ecommerceproject.util.Resource
 import com.example.ecommerceproject.viewModel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,6 +45,28 @@ class LoginFragment:Fragment(R.layout.fragment_login) {
                 val email = edEmailLogin.text.toString().trim()
                 val password = edPasswordLogin.text.toString()
                 viewModel.login(email,password)
+            }
+        }
+        binding.tvForgotPasswordLogin.setOnClickListener {
+            setupBottomSheetDialog { email ->
+
+            }
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.resetPassword.collect(){
+                when(it){
+                    is Resource.Loading ->{
+
+                    }
+                    is Resource.Success ->{
+
+                    }
+                    is Resource.Error ->{
+
+                    }
+                    else -> Unit
+                }
             }
         }
 
