@@ -21,6 +21,7 @@ fun Fragment.setupBottomSheetDialog(
     buttonSend.setOnClickListener {
         val email = edEmail.text.toString().trim()
         onSendClick(email)
+        dialog.dismiss()
     }
     buttonCancel.setOnClickListener {
         dialog.dismiss()

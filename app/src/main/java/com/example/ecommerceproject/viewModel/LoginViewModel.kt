@@ -20,7 +20,7 @@ class LoginViewModel @Inject constructor(
     private val _login = MutableSharedFlow<Resource<FirebaseUser>>()
     val login = _login.asSharedFlow()
 
-    private val _resetPassword = MutableSharedFlow<String>()
+    private val _resetPassword = MutableSharedFlow<Resource<String>>()
     val resetPassword = _resetPassword.asSharedFlow()
     fun login(email:String,password:String){
         viewModelScope.launch { _login.emit(Resource.Loading()) }
