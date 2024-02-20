@@ -58,7 +58,11 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //extra
+
     //Navigation component
+
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.7.7")
 
     //kotlin("kapt")
     // def nav_version = "2.5.2"
