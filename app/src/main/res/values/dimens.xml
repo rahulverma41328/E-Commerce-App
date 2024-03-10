@@ -7,4 +7,7 @@
     <dimen name="mediumButtonHeight">55dp</dimen>
     <dimen name="edittextHeight">60sp</dimen>
     <dimen name="buttonCorners">10dp</dimen>
+
+    <dimen name="spacing_between_columns">8dp</dimen> <!-- Adjust this value as per your requirement -->
+
 </resources>
